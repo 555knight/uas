@@ -56,9 +56,6 @@
 
 		    public function __construct($host, $user, $pass, $db) {
 			$this->conn = new mysqli($host, $user, $pass, $db);
-			if ($this->conn->connect_error) {
-			    die("Koneksi gagal: " . $this->conn->connect_error);
-			}
 		    }
 		}
 
@@ -101,7 +98,7 @@
 			if ($this->userData) {
 			    $user = $this->userData['username'];
 			    $this->conn->query("UPDATE users SET sudah_vote = 1 WHERE username='$user'");
-			    $this->userData['sudah_vote'] = 1; // Update status objek
+			    $this->userData['sudah_vote'] = 1;
 			}
 		    }
 
