@@ -63,7 +63,7 @@
 
 		    private $username;
 		    private $password;
-		    public $userData = null;
+		    public $userData;
 
 		    public function setUsername($username) {
 			$this->username = $username;
