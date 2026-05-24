@@ -73,10 +73,6 @@
 			$this->password = $password;
 		    }
 
-		    public function getUsername() {
-			return $this->username;
-		    }
-
 		    public function login() {
 			if (!empty($this->username) && !empty($this->password)) {
 			    $query = "SELECT * FROM users WHERE username='{$this->username}' AND password='{$this->password}'";
