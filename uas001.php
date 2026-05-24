@@ -72,6 +72,10 @@
 		    public function setPassword($password) {
 			$this->password = $password;
 		    }
+			
+			public function getUsername() {
+			return $this->username;
+		    }
 
 		    public function login() {
 			if (!empty($this->username) && !empty($this->password)) {
@@ -118,12 +122,12 @@
 
 		    if ($voting->login()) {
 			if ($voting->userData["sudah_vote"] == 1) {
-			    echo "Kamu sudah pernah vote!<br>";
+			    echo $voting->getUsername() . " sudah pernah vote!<br>";
 			} else {
 			    if (isset($_GET["pilihan"])) {
 				$voting->tambahVote($_GET["pilihan"]);
 				$voting->tandaiSudahVote();
-				echo "Vote berhasil!<br>";
+				echo $voting->getUsername() . " berhasil vote!<br>";
 			    }
 			}
 		    } else {
